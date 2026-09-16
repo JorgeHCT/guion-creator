@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ⚽ Guión Creator
 
-## Getting Started
+Generador automático de guiones para creadores de contenido de fútbol en YouTube.
 
-First, run the development server:
+## Instalación
 
+1. Instala las dependencias:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Crea el archivo `.env.local` con tu API key de Groq:
+```bash
+cp .env.local.example .env.local
+```
+Edita `.env.local` y pon tu key de Groq (empieza por `gsk_...`)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Arranca el servidor:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Abre http://localhost:3000
 
-## Learn More
+## Cómo conseguir la API key de Groq
 
-To learn more about Next.js, take a look at the following resources:
+1. Ve a https://console.groq.com
+2. Crea una cuenta gratis
+3. Ve a "API Keys" → "Create API Key"
+4. Copia la key y pégala en `.env.local`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Uso
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Haz clic en "Añadir vídeo"
+2. Pega el enlace de YouTube
+3. Haz clic en "Cargar" para obtener título y miniatura
+4. Pega la transcripción del vídeo
+5. Guarda en la cola
+6. Repite con todos los vídeos que quieras
+7. Haz clic en "▶ Empezar" en cada vídeo para generar el guión
 
-## Deploy on Vercel
+## Deploy en Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Sube el proyecto a GitHub
+2. Conecta el repositorio en https://vercel.com
+3. Añade la variable de entorno `GROQ_API_KEY` en Vercel
+4. Deploy automático
